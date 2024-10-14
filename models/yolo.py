@@ -154,7 +154,7 @@ class IDetect(nn.Module):
             x[i] = self.m[i](x[i])  # conv
 
             if self.export_snapml:
-                z.append(x[i].simoid())
+                z.append(x[i].sigmoid())
                 continue
 
             bs, _, ny, nx = x[i].shape  # x(bs,255,20,20) to x(bs,3,20,20,85)
